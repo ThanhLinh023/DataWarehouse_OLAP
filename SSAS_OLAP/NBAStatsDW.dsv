@@ -1,0 +1,180 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="40e97202-8f60-417e-8b0d-df7cf6d3f0cf" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>NBAStatsDW</ID>
+  <Name>NBAStatsDW</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>NBAStatsDW</DataSourceID>
+  <Schema>
+    <xs:schema id="NBAStatsDW" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="NBAStatsDW" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="5a0b6cbe-ad17-4dbc-892a-0a51035f7a7f">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_FactGameStats" msprop:DbTableName="FactGameStats" msprop:FriendlyName="FactGameStats" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="8c841792-53b8-4db2-8109-ed83ebe81f05">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="statsId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="statsId" msprop:DbColumnName="statsId" msprop:design-time-name="bd62e30e-6589-4801-ba0e-0148811e9bb9" type="xs:int" />
+                  <xs:element name="gameKey" msprop:FriendlyName="gameKey" msprop:DbColumnName="gameKey" msprop:design-time-name="e0fbf229-2824-4e37-adb7-4fec97439e94" type="xs:int" minOccurs="0" />
+                  <xs:element name="gameTypeKey" msprop:FriendlyName="gameTypeKey" msprop:DbColumnName="gameTypeKey" msprop:design-time-name="1ed0ee57-e9c8-4e45-8927-812fe26ad5c8" type="xs:int" minOccurs="0" />
+                  <xs:element name="teamKey" msprop:FriendlyName="teamKey" msprop:DbColumnName="teamKey" msprop:design-time-name="9a95ce52-cba6-49b6-a189-eb4413dfb8a4" type="xs:int" minOccurs="0" />
+                  <xs:element name="timeKey" msprop:FriendlyName="timeKey" msprop:DbColumnName="timeKey" msprop:design-time-name="fd1757fb-9c73-44ef-91ab-e491de6ca1d9" type="xs:int" minOccurs="0" />
+                  <xs:element name="fgm" msprop:FriendlyName="fgm" msprop:DbColumnName="fgm" msprop:design-time-name="395e0c92-18ed-4653-96d8-f1530a1748ec" type="xs:int" minOccurs="0" />
+                  <xs:element name="fga" msprop:FriendlyName="fga" msprop:DbColumnName="fga" msprop:design-time-name="b9ffcd2e-1b98-4953-8e10-ec3cebe969bf" type="xs:int" minOccurs="0" />
+                  <xs:element name="_3pm" msprop:FriendlyName="_3pm" msprop:DbColumnName="_3pm" msprop:design-time-name="6a8b7457-2f84-40dd-9dbd-04aef5a51eda" type="xs:int" minOccurs="0" />
+                  <xs:element name="_3pa" msprop:FriendlyName="_3pa" msprop:DbColumnName="_3pa" msprop:design-time-name="30051bd0-bf5c-4e62-a573-5c8ca06c9308" type="xs:int" minOccurs="0" />
+                  <xs:element name="ftm" msprop:FriendlyName="ftm" msprop:DbColumnName="ftm" msprop:design-time-name="6cc28f93-8bfd-4b54-88fc-8c662bf781aa" type="xs:int" minOccurs="0" />
+                  <xs:element name="fta" msprop:FriendlyName="fta" msprop:DbColumnName="fta" msprop:design-time-name="15ebb822-638f-40a4-9748-7eb2cc42eddf" type="xs:int" minOccurs="0" />
+                  <xs:element name="oreb" msprop:FriendlyName="oreb" msprop:DbColumnName="oreb" msprop:design-time-name="ce05c360-83bb-4b24-9e50-79ec2f5bb06e" type="xs:int" minOccurs="0" />
+                  <xs:element name="dreb" msprop:FriendlyName="dreb" msprop:DbColumnName="dreb" msprop:design-time-name="6820d8f2-b0bf-4ade-b8cb-43403cd4efda" type="xs:int" minOccurs="0" />
+                  <xs:element name="reb" msprop:FriendlyName="reb" msprop:DbColumnName="reb" msprop:design-time-name="eaf836ef-4295-4f49-a6c5-1eb964290194" type="xs:int" minOccurs="0" />
+                  <xs:element name="tov" msprop:FriendlyName="tov" msprop:DbColumnName="tov" msprop:design-time-name="b1101419-b3f8-41a8-a59f-9456fa3e244a" type="xs:int" minOccurs="0" />
+                  <xs:element name="stl" msprop:FriendlyName="stl" msprop:DbColumnName="stl" msprop:design-time-name="8fb50b18-8792-4d66-a47c-2b0887311727" type="xs:int" minOccurs="0" />
+                  <xs:element name="blk" msprop:FriendlyName="blk" msprop:DbColumnName="blk" msprop:design-time-name="ea673ed4-ae1f-45e3-8031-af3c88a62022" type="xs:int" minOccurs="0" />
+                  <xs:element name="pf" msprop:FriendlyName="pf" msprop:DbColumnName="pf" msprop:design-time-name="a6afaae0-e4f5-492f-9a71-6a5039f4df0b" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimGameType" msprop:DbTableName="DimGameType" msprop:FriendlyName="DimGameType" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="7ede5b2e-9877-4105-b43d-4901e30c210a">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="gameTypeKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="gameTypeKey" msprop:DbColumnName="gameTypeKey" msprop:design-time-name="c1ab3b35-4915-437f-a0e0-f82ee167e5db" type="xs:int" />
+                  <xs:element name="typeName" msprop:FriendlyName="typeName" msprop:DbColumnName="typeName" msprop:design-time-name="df1c28e9-f02a-4840-99a2-e315134e576d" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimTeam" msprop:DbTableName="DimTeam" msprop:FriendlyName="DimTeam" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="f340221d-4ddc-47cd-b4fa-ce88e3ea47ef">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="teamKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="teamKey" msprop:DbColumnName="teamKey" msprop:design-time-name="f0ed1afa-cb20-4e8a-baad-bbdb1da565ae" type="xs:int" />
+                  <xs:element name="teamId" msprop:FriendlyName="teamId" msprop:DbColumnName="teamId" msprop:design-time-name="ebd52013-8600-416e-9e92-3be94b68e686" type="xs:double" minOccurs="0" />
+                  <xs:element name="teamName" msprop:FriendlyName="teamName" msprop:DbColumnName="teamName" msprop:design-time-name="82dd8b4f-cce6-4616-ba7d-fbfd37a512d1" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimGame" msprop:DbTableName="DimGame" msprop:FriendlyName="DimGame" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="7f7e9870-c86f-4957-bfa6-fb1b45adf490">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="gameKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="gameKey" msprop:DbColumnName="gameKey" msprop:design-time-name="75ed8b9a-a422-4270-b338-7065ecaac355" type="xs:int" />
+                  <xs:element name="gameId" msprop:FriendlyName="gameId" msprop:DbColumnName="gameId" msprop:design-time-name="630a76aa-d910-45e5-a49b-b974aa8845bf" type="xs:double" minOccurs="0" />
+                  <xs:element name="_1stTeam" msprop:FriendlyName="_1stTeam" msprop:DbColumnName="_1stTeam" msprop:design-time-name="106b3a6a-1fa2-4367-8520-26eba41e4220" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="_2ndTeam" msprop:FriendlyName="_2ndTeam" msprop:DbColumnName="_2ndTeam" msprop:design-time-name="6f46b038-49f3-4514-be3f-53bfcb72fa29" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="_1stTeamPoint" msprop:FriendlyName="_1stTeamPoint" msprop:DbColumnName="_1stTeamPoint" msprop:design-time-name="a481bd31-5b75-4020-9e41-55753fff2a6a" type="xs:int" minOccurs="0" />
+                  <xs:element name="_2ndTeamPoint" msprop:FriendlyName="_2ndTeamPoint" msprop:DbColumnName="_2ndTeamPoint" msprop:design-time-name="99c92a0c-8cb3-4422-ac1e-66e80423f10d" type="xs:int" minOccurs="0" />
+                  <xs:element name="duration" msprop:FriendlyName="duration" msprop:DbColumnName="duration" msprop:design-time-name="730d795d-23e0-491b-9647-f79678060c81" type="xs:int" minOccurs="0" />
+                  <xs:element name="season" msprop:FriendlyName="season" msprop:DbColumnName="season" msprop:design-time-name="009be911-5583-4b17-a66d-dff7db652a39" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimTime" msprop:DbTableName="DimTime" msprop:FriendlyName="DimTime" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="81d5025f-c7b2-4e6a-826d-a65b7cb16507">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="timeKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="timeKey" msprop:DbColumnName="timeKey" msprop:design-time-name="3366c3f7-79a6-48ad-9538-10f8865a3e46" type="xs:int" />
+                  <xs:element name="gameId" msprop:FriendlyName="gameId" msprop:DbColumnName="gameId" msprop:design-time-name="037c87bc-ae6f-44a8-a4d6-359f58c956f0" type="xs:double" minOccurs="0" />
+                  <xs:element name="day" msprop:FriendlyName="day" msprop:DbColumnName="day" msprop:design-time-name="f9f4402e-5fb6-4875-a771-c8262327dfeb" type="xs:int" minOccurs="0" />
+                  <xs:element name="month" msprop:FriendlyName="month" msprop:DbColumnName="month" msprop:design-time-name="f1a0a79b-a946-40ae-9ee6-f3a3c9f80792" type="xs:int" minOccurs="0" />
+                  <xs:element name="year" msprop:FriendlyName="year" msprop:DbColumnName="year" msprop:design-time-name="b468b57c-d6e4-4dac-a689-cb642a414896" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_FactGameStats" />
+          <xs:field xpath="statsId" />
+        </xs:unique>
+        <xs:unique name="dbo_DimGameType_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimGameType" />
+          <xs:field xpath="gameTypeKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimTeam_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimTeam" />
+          <xs:field xpath="teamKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimGame_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimGame" />
+          <xs:field xpath="gameKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimTime_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimTime" />
+          <xs:field xpath="timeKey" />
+        </xs:unique>
+        <xs:keyref name="fk_dimGame" refer="dbo_DimGame_Constraint1">
+          <xs:selector xpath=".//dbo_FactGameStats" />
+          <xs:field xpath="gameKey" />
+        </xs:keyref>
+        <xs:keyref name="fk_dimTeam" refer="dbo_DimTeam_Constraint1">
+          <xs:selector xpath=".//dbo_FactGameStats" />
+          <xs:field xpath="teamKey" />
+        </xs:keyref>
+        <xs:keyref name="fk_dimTime" refer="dbo_DimTime_Constraint1">
+          <xs:selector xpath=".//dbo_FactGameStats" />
+          <xs:field xpath="timeKey" />
+        </xs:keyref>
+        <xs:keyref name="fk_dimGameType" refer="dbo_DimGameType_Constraint1">
+          <xs:selector xpath=".//dbo_FactGameStats" />
+          <xs:field xpath="gameTypeKey" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <NBAStatsDW xmlns="" />
+  </Schema>
+</DataSourceView>

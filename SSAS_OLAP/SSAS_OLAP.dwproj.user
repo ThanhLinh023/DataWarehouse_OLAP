@@ -1,0 +1,29 @@
+<AnalysisServicesUserConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Configurations>
+    <Configuration>
+      <Name>Development</Name>
+      <Options>
+        <UserIDs>
+          <ConfigurationSetting>
+            <Id>NBAStatsDW</Id>
+            <Name>NBAStatsDW</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJKzOdCzqBEqw0GK+rEioXwAAAAAWAAAATgBCAEEAUwB0AGEAdABzAEQAVwAAABBmAAAAAQAAIAAAAP7zLEd5AraXVBZpDVCwxh5wmvYNRpvgc02mRR2RvS3uAAAAAA6AAAAAAgAAIAAAAMFQQU1GIXcxPXGFRuAW/JbwpNkIkzLY7f27PoO4Gwj8EAAAAO1ZEbDU2ZRpKxH06QiTOlZAAAAAn6wVAhXceqtbYX/bbqzFtIn63zVaIRLwEshMAxGaxdGd7hcHwerXNKLpGEXx0mt7W6A3pwswsII0b2ndNBS3Ew==</Value>
+          </ConfigurationSetting>
+        </UserIDs>
+        <UserPasswords>
+          <ConfigurationSetting>
+            <Id>NBAStatsDW</Id>
+            <Name>NBAStatsDW</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJKzOdCzqBEqw0GK+rEioXwAAAAAWAAAATgBCAEEAUwB0AGEAdABzAEQAVwAAABBmAAAAAQAAIAAAALUO9rc8eSX4G+NfK4KAy5LsjW8wAyAlZCisFq981KunAAAAAA6AAAAAAgAAIAAAALKXgJ7WJ/8ajbsQ5hF/BhOx1Lkx5inMcqBCOdaRKal9EAAAALs0HC/XtxVvm5ilHHkcRhhAAAAArze8wZlFf5LUfMeUPSKdDodEo3wX3ZkjyKf5KP1P07BBG0Vws0IRtVhoZzAImegq6XagAArdC2EoLSdJvS3reA==</Value>
+          </ConfigurationSetting>
+        </UserPasswords>
+        <TargetServer>DESKTOP-9CU8EU9\SQLSERVER2022</TargetServer>
+        <TargetDatabase>NBAStatsDW_SSAS</TargetDatabase>
+        <StartObject>
+          <ObjectId></ObjectId>
+          <ObjectType>Current</ObjectType>
+        </StartObject>
+      </Options>
+    </Configuration>
+  </Configurations>
+</AnalysisServicesUserConfiguration>

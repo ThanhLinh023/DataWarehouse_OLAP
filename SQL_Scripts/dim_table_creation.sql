@@ -58,8 +58,8 @@ create table FactGameStats
 	pf int
 );
 -- Drop script
-drop table dbo.DimGame
-drop table dbo.DimGameType
-drop table dbo.DimTeam
-drop table dbo.DimTime
-drop table dbo.FactGameStats
+--drop table dbo.DimGame
+--drop table dbo.DimGameType
+--drop table dbo.DimTeam
+--drop table dbo.DimTime
+--drop table dbo.FactGameStats

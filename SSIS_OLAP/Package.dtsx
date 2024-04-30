@@ -11,29 +11,29 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="137"
-  DTS:VersionGUID="{EDA7D6C8-A9DD-4F7C-BEC0-28726762FF00}">
+  DTS:VersionBuild="139"
+  DTS:VersionGUID="{C944BE5D-930F-49BA-A00C-8752F35D497D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.NBAStats]"
+      DTS:refId="Package.ConnectionManagers[localhost\SQLSERVER2022.NBAStats]"
       DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{A7721663-97AC-4C06-A312-FFB3F1B68F03}"
-      DTS:ObjectName="localhost.NBAStats">
+      DTS:DTSID="{EC4C9459-53FC-4B3D-9A36-F043BEE23E6B}"
+      DTS:ObjectName="localhost\SQLSERVER2022.NBAStats">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=NBAStats;Integrated Security=True;Application Name=SSIS-Package-{A7721663-97AC-4C06-A312-FFB3F1B68F03}localhost.NBAStats;" />
+          DTS:ConnectionString="Data Source=localhost\SQLSERVER2022;Initial Catalog=NBAStats;Integrated Security=True;Application Name=SSIS-Package-{EC4C9459-53FC-4B3D-9A36-F043BEE23E6B}localhost\SQLSERVER2022.NBAStats;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.NBAStatsDW]"
+      DTS:refId="Package.ConnectionManagers[localhost\SQLSERVER2022.NBAStatsDW]"
       DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{94CC0EC3-9394-430E-A62B-399C34033559}"
-      DTS:ObjectName="localhost.NBAStatsDW">
+      DTS:DTSID="{10BDA46B-3BEE-487D-BA94-569648742696}"
+      DTS:ObjectName="localhost\SQLSERVER2022.NBAStatsDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=NBAStatsDW;Integrated Security=True;Application Name=SSIS-Package-{94CC0EC3-9394-430E-A62B-399C34033559}localhost.NBAStatsDW;" />
+          DTS:ConnectionString="Data Source=localhost\SQLSERVER2022;Initial Catalog=NBAStatsDW;Integrated Security=True;Application Name=SSIS-Package-{10BDA46B-3BEE-487D-BA94-569648742696}localhost\SQLSERVER2022.NBAStatsDW;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -133,8 +133,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Dimension Tables\Load DimGame\ADO NET Source.Connections[IDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[localhost.NBAStats]"
-                      connectionManagerRefId="Package.ConnectionManagers[localhost.NBAStats]"
+                      connectionManagerID="{A7721663-97AC-4C06-A312-FFB3F1B68F03}:invalid"
+                      connectionManagerRefId="{A7721663-97AC-4C06-A312-FFB3F1B68F03}:invalid"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -871,8 +871,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Dimension Tables\Load DimGame\DimGame.Connections[IDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[localhost.NBAStatsDW]"
-                      connectionManagerRefId="Package.ConnectionManagers[localhost.NBAStatsDW]"
+                      connectionManagerID="{94CC0EC3-9394-430E-A62B-399C34033559}:invalid"
+                      connectionManagerRefId="{94CC0EC3-9394-430E-A62B-399C34033559}:invalid"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -3143,8 +3143,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Dimension Tables\Load DimGameType\DimGameType.Connections[IDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[localhost.NBAStatsDW]"
-                      connectionManagerRefId="Package.ConnectionManagers[localhost.NBAStatsDW]"
+                      connectionManagerID="{94CC0EC3-9394-430E-A62B-399C34033559}:invalid"
+                      connectionManagerRefId="{94CC0EC3-9394-430E-A62B-399C34033559}:invalid"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -3243,8 +3243,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Dimension Tables\Load DimGameType\Original data.Connections[IDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[localhost.NBAStats]"
-                      connectionManagerRefId="Package.ConnectionManagers[localhost.NBAStats]"
+                      connectionManagerID="{A7721663-97AC-4C06-A312-FFB3F1B68F03}:invalid"
+                      connectionManagerRefId="{A7721663-97AC-4C06-A312-FFB3F1B68F03}:invalid"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -4006,8 +4006,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Dimension Tables\Load DimTeam\DimTeam.Connections[IDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[localhost.NBAStatsDW]"
-                      connectionManagerRefId="Package.ConnectionManagers[localhost.NBAStatsDW]"
+                      connectionManagerID="{94CC0EC3-9394-430E-A62B-399C34033559}:invalid"
+                      connectionManagerRefId="{94CC0EC3-9394-430E-A62B-399C34033559}:invalid"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -4116,8 +4116,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Dimension Tables\Load DimTeam\Original Data.Connections[IDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[localhost.NBAStats]"
-                      connectionManagerRefId="Package.ConnectionManagers[localhost.NBAStats]"
+                      connectionManagerID="{A7721663-97AC-4C06-A312-FFB3F1B68F03}:invalid"
+                      connectionManagerRefId="{A7721663-97AC-4C06-A312-FFB3F1B68F03}:invalid"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -4997,8 +4997,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Dimension Tables\Load DimTime\DimTime.Connections[IDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[localhost.NBAStatsDW]"
-                      connectionManagerRefId="Package.ConnectionManagers[localhost.NBAStatsDW]"
+                      connectionManagerID="{94CC0EC3-9394-430E-A62B-399C34033559}:invalid"
+                      connectionManagerRefId="{94CC0EC3-9394-430E-A62B-399C34033559}:invalid"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -5262,8 +5262,8 @@ order by gameid asc</property>
                   <connections>
                     <connection
                       refId="Package\Load Dimension Tables\Load DimTime\Original data.Connections[IDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[localhost.NBAStats]"
-                      connectionManagerRefId="Package.ConnectionManagers[localhost.NBAStats]"
+                      connectionManagerID="{A7721663-97AC-4C06-A312-FFB3F1B68F03}:invalid"
+                      connectionManagerRefId="{A7721663-97AC-4C06-A312-FFB3F1B68F03}:invalid"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -5875,8 +5875,8 @@ order by gameid asc</property>
                   <connections>
                     <connection
                       refId="Package\Load Dimension Tables\Load DimTime\Original data 1.Connections[IDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[localhost.NBAStats]"
-                      connectionManagerRefId="Package.ConnectionManagers[localhost.NBAStats]"
+                      connectionManagerID="{A7721663-97AC-4C06-A312-FFB3F1B68F03}:invalid"
+                      connectionManagerRefId="{A7721663-97AC-4C06-A312-FFB3F1B68F03}:invalid"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -7652,8 +7652,8 @@ order by gameid asc</property>
                   <connections>
                     <connection
                       refId="Package\Load Fact Table\Load FactTable\DimGame.Connections[IDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[localhost.NBAStatsDW]"
-                      connectionManagerRefId="Package.ConnectionManagers[localhost.NBAStatsDW]"
+                      connectionManagerID="{94CC0EC3-9394-430E-A62B-399C34033559}:invalid"
+                      connectionManagerRefId="{94CC0EC3-9394-430E-A62B-399C34033559}:invalid"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -7880,8 +7880,8 @@ order by gameid asc</property>
                   <connections>
                     <connection
                       refId="Package\Load Fact Table\Load FactTable\DimGameType.Connections[IDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[localhost.NBAStatsDW]"
-                      connectionManagerRefId="Package.ConnectionManagers[localhost.NBAStatsDW]"
+                      connectionManagerID="{94CC0EC3-9394-430E-A62B-399C34033559}:invalid"
+                      connectionManagerRefId="{94CC0EC3-9394-430E-A62B-399C34033559}:invalid"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -7997,8 +7997,8 @@ order by gameid asc</property>
                   <connections>
                     <connection
                       refId="Package\Load Fact Table\Load FactTable\DimTeam.Connections[IDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[localhost.NBAStatsDW]"
-                      connectionManagerRefId="Package.ConnectionManagers[localhost.NBAStatsDW]"
+                      connectionManagerID="{94CC0EC3-9394-430E-A62B-399C34033559}:invalid"
+                      connectionManagerRefId="{94CC0EC3-9394-430E-A62B-399C34033559}:invalid"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -8132,8 +8132,8 @@ order by gameid asc</property>
                   <connections>
                     <connection
                       refId="Package\Load Fact Table\Load FactTable\DimTime.Connections[IDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[localhost.NBAStatsDW]"
-                      connectionManagerRefId="Package.ConnectionManagers[localhost.NBAStatsDW]"
+                      connectionManagerID="{94CC0EC3-9394-430E-A62B-399C34033559}:invalid"
+                      connectionManagerRefId="{94CC0EC3-9394-430E-A62B-399C34033559}:invalid"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -8296,8 +8296,8 @@ order by gameid asc</property>
                   <connections>
                     <connection
                       refId="Package\Load Fact Table\Load FactTable\FactGameStats.Connections[IDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[localhost.NBAStatsDW]"
-                      connectionManagerRefId="Package.ConnectionManagers[localhost.NBAStatsDW]"
+                      connectionManagerID="{94CC0EC3-9394-430E-A62B-399C34033559}:invalid"
+                      connectionManagerRefId="{94CC0EC3-9394-430E-A62B-399C34033559}:invalid"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -10154,8 +10154,8 @@ order by gameid asc</property>
                   <connections>
                     <connection
                       refId="Package\Load Fact Table\Load FactTable\Original Data.Connections[IDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[localhost.NBAStats]"
-                      connectionManagerRefId="Package.ConnectionManagers[localhost.NBAStats]"
+                      connectionManagerID="{A7721663-97AC-4C06-A312-FFB3F1B68F03}:invalid"
+                      connectionManagerRefId="{A7721663-97AC-4C06-A312-FFB3F1B68F03}:invalid"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -14113,59 +14113,59 @@ order by gameid asc</property>
                   startId="Package\Load Fact Table\Load FactTable\DimGameType.Outputs[ADO NET Source Output]" />
                 <path
                   refId="Package\Load Fact Table\Load FactTable.Paths[Merge Join Output2]"
-                  endId="Package\Load Fact Table\Load FactTable\Sort teamId.Inputs[Sort Input]"
-                  name="Merge Join Output"
-                  startId="Package\Load Fact Table\Load FactTable\Merge Join teamId.Outputs[Merge Join Output]" />
-                <path
-                  refId="Package\Load Fact Table\Load FactTable.Paths[Merge Join Output3]"
-                  endId="Package\Load Fact Table\Load FactTable\FactGameStats.Inputs[ADO NET Destination Input]"
-                  name="Merge Join Output"
-                  startId="Package\Load Fact Table\Load FactTable\Merge Join timeKey.Outputs[Merge Join Output]" />
-                <path
-                  refId="Package\Load Fact Table\Load FactTable.Paths[Merge Join Output]"
                   endId="Package\Load Fact Table\Load FactTable\Sort typeName.Inputs[Sort Input]"
                   name="Merge Join Output"
                   startId="Package\Load Fact Table\Load FactTable\Merge Join typeName.Outputs[Merge Join Output]" />
                 <path
-                  refId="Package\Load Fact Table\Load FactTable.Paths[Merge Join Output1]"
+                  refId="Package\Load Fact Table\Load FactTable.Paths[Merge Join Output3]"
                   endId="Package\Load Fact Table\Load FactTable\Sort gameId.Inputs[Sort Input]"
                   name="Merge Join Output"
                   startId="Package\Load Fact Table\Load FactTable\Merge Join gameId.Outputs[Merge Join Output]" />
                 <path
+                  refId="Package\Load Fact Table\Load FactTable.Paths[Merge Join Output]"
+                  endId="Package\Load Fact Table\Load FactTable\Sort teamId.Inputs[Sort Input]"
+                  name="Merge Join Output"
+                  startId="Package\Load Fact Table\Load FactTable\Merge Join teamId.Outputs[Merge Join Output]" />
+                <path
+                  refId="Package\Load Fact Table\Load FactTable.Paths[Merge Join Output1]"
+                  endId="Package\Load Fact Table\Load FactTable\FactGameStats.Inputs[ADO NET Destination Input]"
+                  name="Merge Join Output"
+                  startId="Package\Load Fact Table\Load FactTable\Merge Join timeKey.Outputs[Merge Join Output]" />
+                <path
                   refId="Package\Load Fact Table\Load FactTable.Paths[Sort Output6]"
+                  endId="Package\Load Fact Table\Load FactTable\Merge Join teamId.Inputs[Merge Join Right Input]"
+                  name="Sort Output"
+                  startId="Package\Load Fact Table\Load FactTable\Sort gameId.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Load Fact Table\Load FactTable.Paths[Sort Output]"
                   endId="Package\Load Fact Table\Load FactTable\Merge Join timeKey.Inputs[Merge Join Left Input]"
                   name="Sort Output"
                   startId="Package\Load Fact Table\Load FactTable\Sort gameId in DimTime.Outputs[Sort Output]" />
                 <path
-                  refId="Package\Load Fact Table\Load FactTable.Paths[Sort Output]"
+                  refId="Package\Load Fact Table\Load FactTable.Paths[Sort Output1]"
                   endId="Package\Load Fact Table\Load FactTable\Merge Join typeName.Inputs[Merge Join Left Input]"
                   name="Sort Output"
                   startId="Package\Load Fact Table\Load FactTable\Sort raw data.Outputs[Sort Output]" />
                 <path
-                  refId="Package\Load Fact Table\Load FactTable.Paths[Sort Output1]"
+                  refId="Package\Load Fact Table\Load FactTable.Paths[Sort Output2]"
                   endId="Package\Load Fact Table\Load FactTable\Merge Join gameId.Inputs[Merge Join Right Input]"
                   name="Sort Output"
                   startId="Package\Load Fact Table\Load FactTable\Sort DimGame.Outputs[Sort Output]" />
                 <path
-                  refId="Package\Load Fact Table\Load FactTable.Paths[Sort Output2]"
+                  refId="Package\Load Fact Table\Load FactTable.Paths[Sort Output3]"
                   endId="Package\Load Fact Table\Load FactTable\Merge Join gameId.Inputs[Merge Join Left Input]"
                   name="Sort Output"
                   startId="Package\Load Fact Table\Load FactTable\Sort typeName.Outputs[Sort Output]" />
                 <path
-                  refId="Package\Load Fact Table\Load FactTable.Paths[Sort Output3]"
+                  refId="Package\Load Fact Table\Load FactTable.Paths[Sort Output4]"
                   endId="Package\Load Fact Table\Load FactTable\Merge Join timeKey.Inputs[Merge Join Right Input]"
                   name="Sort Output"
                   startId="Package\Load Fact Table\Load FactTable\Sort teamId.Outputs[Sort Output]" />
                 <path
-                  refId="Package\Load Fact Table\Load FactTable.Paths[Sort Output4]"
+                  refId="Package\Load Fact Table\Load FactTable.Paths[Sort Output5]"
                   endId="Package\Load Fact Table\Load FactTable\Merge Join teamId.Inputs[Merge Join Left Input]"
                   name="Sort Output"
                   startId="Package\Load Fact Table\Load FactTable\Sort DimTeam.Outputs[Sort Output]" />
-                <path
-                  refId="Package\Load Fact Table\Load FactTable.Paths[Sort Output5]"
-                  endId="Package\Load Fact Table\Load FactTable\Merge Join teamId.Inputs[Merge Join Right Input]"
-                  name="Sort Output"
-                  startId="Package\Load Fact Table\Load FactTable\Sort gameId.Outputs[Sort Output]" />
                 <path
                   refId="Package\Load Fact Table\Load FactTable.Paths[Sort Output7]"
                   endId="Package\Load Fact Table\Load FactTable\Merge Join typeName.Inputs[Merge Join Right Input]"
@@ -14257,6 +14257,10 @@ order by gameid asc</property>
           Id="Package\Create Foreign Key"
           TopLeft="629.791384421183,570.139121873258" />
         <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Load Dimension Tables\Load DimGame"
+          TopLeft="59.0285728365793,272.835293981577" />
+        <NodeLayout
           Size="173.6,41.6"
           Id="Package\Load Dimension Tables\Load DimGameType"
           TopLeft="47.7428582117876,86.0352939587873" />
@@ -14312,10 +14316,6 @@ order by gameid asc</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Load Dimension Tables\Load DimGame"
-          TopLeft="59.0285728365793,272.835293981577" />
         <EdgeLayout
           Id="Package\Load Dimension Tables.PrecedenceConstraints[Constraint 2]"
           TopLeft="133.673470768611,226.662184800791">
@@ -14437,6 +14437,238 @@ order by gameid asc</property>
     </LayoutInfo>
   </Package>
   <TaskHost
+    design-time-name="Package\Load Dimension Tables\Load DimGame">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Load Dimension Tables\Load DimGame\Conditional Split"
+          TopLeft="321.428572112809,168.235293970182" />
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\Load Dimension Tables\Load DimGame\Sort 2"
+          TopLeft="497.619048678348,277.843137011362" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Load Dimension Tables\Load DimGame\Merge Join"
+          TopLeft="348.412699154378,363.77777746125" />
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\Load Dimension Tables\Load DimGame\Sort 1"
+          TopLeft="219.047619513914,275.294117405753" />
+        <NodeLayout
+          Size="157.6,41.6"
+          Id="Package\Load Dimension Tables\Load DimGame\ADO NET Source"
+          TopLeft="322.142857828615,61.1764705346118" />
+        <NodeLayout
+          Size="124,41.6"
+          Id="Package\Load Dimension Tables\Load DimGame\DimGame"
+          TopLeft="344.444445177676,469.019607432023" />
+        <EdgeLayout
+          Id="Package\Load Dimension Tables\Load DimGame.Paths[ADO NET Source Output]"
+          TopLeft="399.785714970712,102.776470534612">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.4588234355706"
+              Start="0,0"
+              End="0,57.9588234355706">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.9588234355706" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dimension Tables\Load DimGame.Paths[Sort Output1]"
+          TopLeft="550.819048678348,319.443137011362">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-117.339682857304,44.3346404498883"
+              Start="0,0"
+              End="-117.339682857304,36.8346404498883">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.2763844617631" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.2763844617631"
+                    Point2="0,26.2763844617631"
+                    Point3="-4,26.2763844617631" />
+                  <mssgle:LineSegment
+                    End="-113.339682857304,26.2763844617631" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-113.339682857304,26.2763844617631"
+                    Point2="-117.339682857304,26.2763844617631"
+                    Point3="-117.339682857304,30.2763844617631" />
+                  <mssgle:LineSegment
+                    End="-117.339682857304,36.8346404498883" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dimension Tables\Load DimGame.Paths[Sort Output]"
+          TopLeft="272.247619513914,316.894117405753">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120.698412973797,46.8836600554973"
+              Start="0,0"
+              End="120.698412973797,39.3836600554973">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.7871448621606" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.7871448621606"
+                    Point2="0,27.7871448621606"
+                    Point3="4,27.7871448621606" />
+                  <mssgle:LineSegment
+                    End="116.698412973797,27.7871448621606" />
+                  <mssgle:CubicBezierSegment
+                    Point1="116.698412973797,27.7871448621606"
+                    Point2="120.698412973797,27.7871448621606"
+                    Point3="120.698412973797,31.7871448621606" />
+                  <mssgle:LineSegment
+                    End="120.698412973797,39.3836600554973" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dimension Tables\Load DimGame.Paths[Merge Join Output]"
+          TopLeft="409.828572166027,405.37777746125">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.6418299707734"
+              Start="0,0"
+              End="0,56.1418299707734">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.1418299707734" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dimension Tables\Load DimGame.Paths[If show stat of home first]"
+          TopLeft="374.228572112809,209.835293970182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-101.980952598895,65.4588234355703"
+              Start="0,0"
+              End="-101.980952598895,57.9588234355703">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5863529030624" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5863529030624"
+                    Point2="0,26.5863529030624"
+                    Point3="-4,26.5863529030624" />
+                  <mssgle:LineSegment
+                    End="-97.9809525988946,26.5863529030624" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-97.9809525988946,26.5863529030624"
+                    Point2="-101.980952598895,26.5863529030624"
+                    Point3="-101.980952598895,30.5863529030624" />
+                  <mssgle:LineSegment
+                    End="-101.980952598895,57.9588234355703" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-107.753464580697,31.5863529030624,113.5259765625,9.7978515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dimension Tables\Load DimGame.Paths[If show stat of away first]"
+          TopLeft="423.028572112809,209.835293970182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="127.790476565539,68.0078430411792"
+              Start="0,0"
+              End="127.790476565539,60.5078430411792">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.621647019802" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.621647019802"
+                    Point2="0,27.621647019802"
+                    Point3="4,27.621647019802" />
+                  <mssgle:LineSegment
+                    End="123.790476565539,27.621647019802" />
+                  <mssgle:CubicBezierSegment
+                    Point1="123.790476565539,27.621647019802"
+                    Point2="127.790476565539,27.621647019802"
+                    Point3="127.790476565539,31.621647019802" />
+                  <mssgle:LineSegment
+                    End="127.790476565539,60.5078430411792" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="8.01725000151969,32.621647019802,111.7559765625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dimension Tables\Load DimGame\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dimension Tables\Load DimGame\DimGame">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Load Dimension Tables\Load DimGameType">
     <LayoutInfo>
       <GraphLayout
@@ -14501,7 +14733,7 @@ order by gameid asc</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Dimension Tables\Load DimGameType\Original data">
+    design-time-name="Package\Load Dimension Tables\Load DimGameType\DimGameType">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14509,7 +14741,7 @@ order by gameid asc</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Dimension Tables\Load DimGameType\DimGameType">
+    design-time-name="Package\Load Dimension Tables\Load DimGameType\Original data">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14526,13 +14758,13 @@ order by gameid asc</property>
           Id="Package\Load Dimension Tables\Load DimTeam\Original Data"
           TopLeft="374.28571508247,87.9411763935043" />
         <NodeLayout
-          Size="126.4,41.6"
-          Id="Package\Load Dimension Tables\Load DimTeam\Aggregate"
-          TopLeft="376.428572229889,195.764705710758" />
-        <NodeLayout
           Size="123.2,41.6"
           Id="Package\Load Dimension Tables\Load DimTeam\DimTeam"
           TopLeft="374.142857564652,313.764705593301" />
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\Load Dimension Tables\Load DimTeam\Aggregate"
+          TopLeft="376.428572229889,195.764705710758" />
         <EdgeLayout
           Id="Package\Load Dimension Tables\Load DimTeam.Paths[ADO NET Source Output]"
           TopLeft="441.95714365618,129.541176393504">
@@ -15052,7 +15284,7 @@ order by gameid asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Fact Table\Load FactTable.Paths[Sort Output6]"
+          Id="Package\Load Fact Table\Load FactTable.Paths[Sort Output]"
           TopLeft="1010.16666879363,208.560784167378">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15074,7 +15306,7 @@ order by gameid asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Fact Table\Load FactTable.Paths[Sort Output5]"
+          Id="Package\Load Fact Table\Load FactTable.Paths[Sort Output6]"
           TopLeft="635.609524871358,457.319607460511">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15096,7 +15328,7 @@ order by gameid asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Fact Table\Load FactTable.Paths[Sort Output4]"
+          Id="Package\Load Fact Table\Load FactTable.Paths[Sort Output5]"
           TopLeft="783.964287147382,205.23725481594">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15118,7 +15350,7 @@ order by gameid asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Fact Table\Load FactTable.Paths[Sort Output3]"
+          Id="Package\Load Fact Table\Load FactTable.Paths[Sort Output4]"
           TopLeft="849.876191999251,551.07777732076">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15140,7 +15372,7 @@ order by gameid asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Fact Table\Load FactTable.Paths[Sort Output2]"
+          Id="Package\Load Fact Table\Load FactTable.Paths[Sort Output3]"
           TopLeft="313.085714635436,358.545097743169">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15162,7 +15394,7 @@ order by gameid asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Fact Table\Load FactTable.Paths[Sort Output1]"
+          Id="Package\Load Fact Table\Load FactTable.Paths[Sort Output2]"
           TopLeft="566.500001037759,206.011764561769">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15184,7 +15416,7 @@ order by gameid asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Fact Table\Load FactTable.Paths[Sort Output]"
+          Id="Package\Load Fact Table\Load FactTable.Paths[Sort Output1]"
           TopLeft="134.295238229551,204.737254758965">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15218,7 +15450,7 @@ order by gameid asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Fact Table\Load FactTable.Paths[Merge Join Output3]"
+          Id="Package\Load Fact Table\Load FactTable.Paths[Merge Join Output1]"
           TopLeft="1099.20952612731,553.626796926369">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15240,7 +15472,7 @@ order by gameid asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Fact Table\Load FactTable.Paths[Merge Join Output2]"
+          Id="Package\Load Fact Table\Load FactTable.Paths[Merge Join Output]"
           TopLeft="782.938096744684,478.756862361913">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15262,7 +15494,7 @@ order by gameid asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Fact Table\Load FactTable.Paths[Merge Join Output1]"
+          Id="Package\Load Fact Table\Load FactTable.Paths[Merge Join Output3]"
           TopLeft="566.28095342378,379.345097743169">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15284,7 +15516,7 @@ order by gameid asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Fact Table\Load FactTable.Paths[Merge Join Output]"
+          Id="Package\Load Fact Table\Load FactTable.Paths[Merge Join Output2]"
           TopLeft="238.947619380868,297.776470363687">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15350,238 +15582,6 @@ order by gameid asc</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load Fact Table\Load FactTable\DimGameType">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Load Dimension Tables\Load DimGame">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="157.6,41.6"
-          Id="Package\Load Dimension Tables\Load DimGame\ADO NET Source"
-          TopLeft="322.142857828615,61.1764705346118" />
-        <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\Load Dimension Tables\Load DimGame\Conditional Split"
-          TopLeft="321.428572112809,168.235293970182" />
-        <EdgeLayout
-          Id="Package\Load Dimension Tables\Load DimGame.Paths[ADO NET Source Output]"
-          TopLeft="399.785714970712,102.776470534612">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,65.4588234355706"
-              Start="0,0"
-              End="0,57.9588234355706">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,57.9588234355706" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="106.4,41.6"
-          Id="Package\Load Dimension Tables\Load DimGame\Sort 1"
-          TopLeft="219.047619513914,275.294117405753" />
-        <NodeLayout
-          Size="106.4,41.6"
-          Id="Package\Load Dimension Tables\Load DimGame\Sort 2"
-          TopLeft="497.619048678348,277.843137011362" />
-        <EdgeLayout
-          Id="Package\Load Dimension Tables\Load DimGame.Paths[If show stat of home first]"
-          TopLeft="374.228572112809,209.835293970182">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-101.980952598895,65.4588234355703"
-              Start="0,0"
-              End="-101.980952598895,57.9588234355703">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.5863529030624" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.5863529030624"
-                    Point2="0,26.5863529030624"
-                    Point3="-4,26.5863529030624" />
-                  <mssgle:LineSegment
-                    End="-97.9809525988946,26.5863529030624" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-97.9809525988946,26.5863529030624"
-                    Point2="-101.980952598895,26.5863529030624"
-                    Point3="-101.980952598895,30.5863529030624" />
-                  <mssgle:LineSegment
-                    End="-101.980952598895,57.9588234355703" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-107.753464580697,31.5863529030624,113.5259765625,9.7978515625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Dimension Tables\Load DimGame.Paths[If show stat of away first]"
-          TopLeft="423.028572112809,209.835293970182">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="127.790476565539,68.0078430411792"
-              Start="0,0"
-              End="127.790476565539,60.5078430411792">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.621647019802" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.621647019802"
-                    Point2="0,27.621647019802"
-                    Point3="4,27.621647019802" />
-                  <mssgle:LineSegment
-                    End="123.790476565539,27.621647019802" />
-                  <mssgle:CubicBezierSegment
-                    Point1="123.790476565539,27.621647019802"
-                    Point2="127.790476565539,27.621647019802"
-                    Point3="127.790476565539,31.621647019802" />
-                  <mssgle:LineSegment
-                    End="127.790476565539,60.5078430411792" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="8.01725000151969,32.621647019802,111.7559765625,11.658203125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Load Dimension Tables\Load DimGame\Merge Join"
-          TopLeft="348.412699154378,363.77777746125" />
-        <EdgeLayout
-          Id="Package\Load Dimension Tables\Load DimGame.Paths[Sort Output]"
-          TopLeft="272.247619513914,316.894117405753">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="120.698412973797,46.8836600554973"
-              Start="0,0"
-              End="120.698412973797,39.3836600554973">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.7871448621606" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.7871448621606"
-                    Point2="0,27.7871448621606"
-                    Point3="4,27.7871448621606" />
-                  <mssgle:LineSegment
-                    End="116.698412973797,27.7871448621606" />
-                  <mssgle:CubicBezierSegment
-                    Point1="116.698412973797,27.7871448621606"
-                    Point2="120.698412973797,27.7871448621606"
-                    Point3="120.698412973797,31.7871448621606" />
-                  <mssgle:LineSegment
-                    End="120.698412973797,39.3836600554973" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Dimension Tables\Load DimGame.Paths[Sort Output1]"
-          TopLeft="550.819048678348,319.443137011362">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-117.339682857304,44.3346404498883"
-              Start="0,0"
-              End="-117.339682857304,36.8346404498883">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.2763844617631" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.2763844617631"
-                    Point2="0,26.2763844617631"
-                    Point3="-4,26.2763844617631" />
-                  <mssgle:LineSegment
-                    End="-113.339682857304,26.2763844617631" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-113.339682857304,26.2763844617631"
-                    Point2="-117.339682857304,26.2763844617631"
-                    Point3="-117.339682857304,30.2763844617631" />
-                  <mssgle:LineSegment
-                    End="-117.339682857304,36.8346404498883" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="124,41.6"
-          Id="Package\Load Dimension Tables\Load DimGame\DimGame"
-          TopLeft="344.444445177676,469.019607432023" />
-        <EdgeLayout
-          Id="Package\Load Dimension Tables\Load DimGame.Paths[Merge Join Output]"
-          TopLeft="409.828572166027,405.37777746125">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,63.6418299707734"
-              Start="0,0"
-              End="0,56.1418299707734">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,56.1418299707734" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Dimension Tables\Load DimGame\ADO NET Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Dimension Tables\Load DimGame\DimGame">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

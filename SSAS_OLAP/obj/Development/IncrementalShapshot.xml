@@ -1,0 +1,82 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>NBAStatsDW_SSAS</Database>
+    <Server>DESKTOP-9CU8EU9\SQLSERVER2022</Server>
+    <ConnectionString>Data Source=DESKTOP-9CU8EU9\SQLSERVER2022;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>P8l+R2oyymk7z86I5dk38eFo6kM=4/18/2024 10:24:50 AM4/18/2024 10:24:50 AM</TimeStamp>
+        <ID>
+          <String>NBAStatsDW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>ayqGkaAxIEJgzWstruRGANeqfgo=4/18/2024 10:25:11 AM4/18/2024 10:25:10 AM</TimeStamp>
+        <ID>
+          <String>NBAStatsDW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>LiDTC/El/TD+sEqajYwsaPMEy4w=4/18/2024 10:26:37 AM4/18/2024 10:25:30 AM</TimeStamp>
+        <ID>
+          <String>Dim Game Type</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Izd1S95pjgWyuRSQTeccI5PJLis=4/19/2024 9:54:58 AM4/18/2024 10:25:30 AM</TimeStamp>
+        <ID>
+          <String>Dim Time</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>/kzSErYLE0IRPFKxdqINd4lVXkA=4/18/2024 10:28:52 AM4/18/2024 10:25:30 AM</TimeStamp>
+        <ID>
+          <String>Dim Team</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>qN4O+Azn8zCtdWlaznHiPDQ8i1I=4/19/2024 10:33:11 AM4/18/2024 10:25:30 AM</TimeStamp>
+        <ID>
+          <String>Dim Game</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>N8RG19MRhLnwbCjbglrS+8im3ig=4/19/2024 9:49:03 PM4/18/2024 10:25:30 AMUm/Ns62T+7q19Z88KYcBA7s/eLA=4/18/2024 7:16:42 PM4/18/2024 10:25:30 AM</TimeStamp>
+        <ID>
+          <String>NBAStatsDW</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>CppLeVmbeUwa2J7LCbU45RLQHG8=4/18/2024 10:24:24 AM4/18/2024 10:24:23 AM</TimeStamp>
+      <ID>
+        <String>NBAStatsDW_SSAS</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2024-04-19T14:49:10.393333Z</LastDeployed>
+</DeploymentSnapshot>
