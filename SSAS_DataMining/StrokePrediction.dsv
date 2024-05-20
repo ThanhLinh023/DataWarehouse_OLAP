@@ -1,0 +1,102 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="d8a6c75d-dbc2-46d3-9b0b-46b37d048123" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>StrokePrediction</ID>
+  <Name>StrokePrediction</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>StrokePrediction</DataSourceID>
+  <Schema>
+    <xs:schema id="StrokePrediction" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="StrokePrediction" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="5945aac8-e4a0-4d97-a7e6-f79a7cd1b7fc">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_StrokeData" msprop:design-time-name="0a7cf430-232e-4ec2-a336-675d80fb637b" msprop:DbTableName="StrokeData" msprop:FriendlyName="StrokeData" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id" msprop:design-time-name="118bc006-a1e7-4983-97f6-7111b6a61379" msprop:DbColumnName="id" msprop:FriendlyName="id" type="xs:double" minOccurs="0" />
+                  <xs:element name="gender" msprop:design-time-name="f270c628-1eca-42a7-b083-6eb4f088e5f3" msprop:DbColumnName="gender" msprop:FriendlyName="gender" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="age" msprop:design-time-name="55d15eeb-93ae-4d3a-bf09-0c08273c63d6" msprop:DbColumnName="age" msprop:FriendlyName="age" type="xs:double" minOccurs="0" />
+                  <xs:element name="hypertension" msprop:design-time-name="28e0a41f-c7b1-412c-aabc-4fbe4ccac2c4" msprop:DbColumnName="hypertension" msprop:FriendlyName="hypertension" type="xs:double" minOccurs="0" />
+                  <xs:element name="heart_disease" msprop:design-time-name="0436076e-719f-42c3-9150-e7afe03e963d" msprop:DbColumnName="heart_disease" msprop:FriendlyName="heart_disease" type="xs:double" minOccurs="0" />
+                  <xs:element name="ever_married" msprop:design-time-name="ba980c74-d976-4566-a69e-6ef71441e028" msprop:DbColumnName="ever_married" msprop:FriendlyName="ever_married" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="work_type" msprop:design-time-name="255993d9-ce24-4418-800f-b1a61b721f76" msprop:DbColumnName="work_type" msprop:FriendlyName="work_type" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="residence_type" msprop:design-time-name="1c9b757c-8bad-4911-8cb6-df5e10a9652f" msprop:DbColumnName="residence_type" msprop:FriendlyName="residence_type" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="avg_glucose_level" msprop:design-time-name="dfe4ef3a-0155-4399-a226-6812aa3e55e4" msprop:DbColumnName="avg_glucose_level" msprop:FriendlyName="avg_glucose_level" type="xs:double" minOccurs="0" />
+                  <xs:element name="bmi" msprop:design-time-name="8d9f270f-549b-47a4-959d-e1db35026457" msprop:DbColumnName="bmi" msprop:FriendlyName="bmi" type="xs:double" minOccurs="0" />
+                  <xs:element name="smoking_status" msprop:design-time-name="15393d40-dcf3-402e-ba20-1d97a462139e" msprop:DbColumnName="smoking_status" msprop:FriendlyName="smoking_status" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="stroke" msprop:design-time-name="973c76c1-7867-48f0-bd17-28766be5d253" msprop:DbColumnName="stroke" msprop:FriendlyName="stroke" type="xs:double" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <StrokePrediction xmlns="" />
+  </Schema>
+</DataSourceView>

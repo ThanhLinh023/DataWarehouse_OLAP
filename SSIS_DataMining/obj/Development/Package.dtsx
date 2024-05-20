@@ -1,0 +1,791 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/9/2024 5:02:47 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-9CU8EU9"
+  DTS:CreatorName="DESKTOP-9CU8EU9\ThanhLinh"
+  DTS:DTSID="{6E4D039C-58BB-4ADD-A6D7-4AB6272EAC6D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{1E20F99C-65C1-4DBD-A354-8C4A83B82D63}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{4E2AC496-9186-4188-A22D-6928D287D048}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\DataWarehouse_OLAP\Data\stroke_dataset.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost\SQLSERVER2019.StrokePrediction]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{984F3EA5-8AFA-4486-B9E9-90A4624B1488}"
+      DTS:ObjectName="localhost\SQLSERVER2019.StrokePrediction">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost\SQLSERVER2019;Initial Catalog=StrokePrediction;Integrated Security=True;Application Name=SSIS-Package-{984F3EA5-8AFA-4486-B9E9-90A4624B1488}localhost\SQLSERVER2019.StrokePrediction;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Import data to SQL Server"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D1817883-EDA0-471F-88DE-6A238E289E02}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import data to SQL Server">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import data to SQL Server\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import data to SQL Server\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import data to SQL Server\Conditional Split.Inputs[Conditional Split Input].Columns[bmi]"
+                      cachedDataType="r8"
+                      cachedName="bmi"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[bmi]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import data to SQL Server\Conditional Split.Outputs[Not NA BMI]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Not NA BMI"
+                  synchronousInputId="Package\Import data to SQL Server\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[bmi]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(bmi)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import data to SQL Server\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Import data to SQL Server\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import data to SQL Server\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Import data to SQL Server\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import data to SQL Server\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import data to SQL Server\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import data to SQL Server\Destination table"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="Destination table"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."StrokeData"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import data to SQL Server\Destination table.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost\SQLSERVER2019.StrokePrediction]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost\SQLSERVER2019.StrokePrediction]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].Columns[id]"
+                      cachedDataType="r8"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].Columns[gender]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="gender"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[gender]"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[gender]" />
+                    <inputColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].Columns[age]"
+                      cachedDataType="r8"
+                      cachedName="age"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[age]"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[age]" />
+                    <inputColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].Columns[hypertension]"
+                      cachedDataType="r8"
+                      cachedName="hypertension"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[hypertension]"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[hypertension]" />
+                    <inputColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].Columns[heart_disease]"
+                      cachedDataType="r8"
+                      cachedName="heart_disease"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[heart_disease]"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[heart_disease]" />
+                    <inputColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].Columns[ever_married]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ever_married"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[ever_married]"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[ever_married]" />
+                    <inputColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].Columns[work_type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="work_type"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[work_type]"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[work_type]" />
+                    <inputColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].Columns[Residence_type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Residence_type"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[residence_type]"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[Residence_type]" />
+                    <inputColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].Columns[avg_glucose_level]"
+                      cachedDataType="r8"
+                      cachedName="avg_glucose_level"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[avg_glucose_level]"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[avg_glucose_level]" />
+                    <inputColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].Columns[bmi]"
+                      cachedDataType="r8"
+                      cachedName="bmi"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[bmi]"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[bmi]" />
+                    <inputColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].Columns[smoking_status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="smoking_status"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[smoking_status]"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[smoking_status]" />
+                    <inputColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].Columns[stroke]"
+                      cachedDataType="r8"
+                      cachedName="stroke"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[stroke]"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[stroke]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[id]"
+                      dataType="r8"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[gender]"
+                      dataType="wstr"
+                      length="255"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[age]"
+                      dataType="r8"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[hypertension]"
+                      dataType="r8"
+                      name="hypertension" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[heart_disease]"
+                      dataType="r8"
+                      name="heart_disease" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[ever_married]"
+                      dataType="wstr"
+                      length="255"
+                      name="ever_married" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[work_type]"
+                      dataType="wstr"
+                      length="255"
+                      name="work_type" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[residence_type]"
+                      dataType="wstr"
+                      length="255"
+                      name="residence_type" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[avg_glucose_level]"
+                      dataType="r8"
+                      name="avg_glucose_level" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[bmi]"
+                      dataType="r8"
+                      name="bmi" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[smoking_status]"
+                      dataType="wstr"
+                      length="255"
+                      name="smoking_status" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input].ExternalColumns[stroke]"
+                      dataType="r8"
+                      name="stroke" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import data to SQL Server\Destination table.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Destination table.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import data to SQL Server\Destination table.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Destination table.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import data to SQL Server\Destination table.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import data to SQL Server\Original Data"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Original Data"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">stroke_dataset$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import data to SQL Server\Original Data.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[id]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[id]"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[gender]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[gender]"
+                      length="255"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[gender]"
+                      name="gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[age]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[age]"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[age]"
+                      name="age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[hypertension]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[hypertension]"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[hypertension]"
+                      name="hypertension"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[heart_disease]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[heart_disease]"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[heart_disease]"
+                      name="heart_disease"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[ever_married]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[ever_married]"
+                      length="255"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[ever_married]"
+                      name="ever_married"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[work_type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[work_type]"
+                      length="255"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[work_type]"
+                      name="work_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[Residence_type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[Residence_type]"
+                      length="255"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[Residence_type]"
+                      name="Residence_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[avg_glucose_level]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[avg_glucose_level]"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[avg_glucose_level]"
+                      name="avg_glucose_level"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[bmi]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[bmi]"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[bmi]"
+                      name="bmi"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[smoking_status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[smoking_status]"
+                      length="255"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[smoking_status]"
+                      name="smoking_status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[stroke]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[stroke]"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].Columns[stroke]"
+                      name="stroke"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[id]"
+                      dataType="r8"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[gender]"
+                      dataType="wstr"
+                      length="255"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[age]"
+                      dataType="r8"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[hypertension]"
+                      dataType="r8"
+                      name="hypertension" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[heart_disease]"
+                      dataType="r8"
+                      name="heart_disease" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[ever_married]"
+                      dataType="wstr"
+                      length="255"
+                      name="ever_married" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[work_type]"
+                      dataType="wstr"
+                      length="255"
+                      name="work_type" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[Residence_type]"
+                      dataType="wstr"
+                      length="255"
+                      name="Residence_type" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[avg_glucose_level]"
+                      dataType="r8"
+                      name="avg_glucose_level" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[bmi]"
+                      dataType="r8"
+                      name="bmi" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[smoking_status]"
+                      dataType="wstr"
+                      length="255"
+                      name="smoking_status" />
+                    <externalMetadataColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output].ExternalColumns[stroke]"
+                      dataType="r8"
+                      name="stroke" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[id]"
+                      dataType="r8"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[gender]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[gender]"
+                      name="gender" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[age]"
+                      dataType="r8"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[age]"
+                      name="age" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[hypertension]"
+                      dataType="r8"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[hypertension]"
+                      name="hypertension" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[heart_disease]"
+                      dataType="r8"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[heart_disease]"
+                      name="heart_disease" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[ever_married]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[ever_married]"
+                      name="ever_married" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[work_type]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[work_type]"
+                      name="work_type" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[Residence_type]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[Residence_type]"
+                      name="Residence_type" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[avg_glucose_level]"
+                      dataType="r8"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[avg_glucose_level]"
+                      name="avg_glucose_level" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[bmi]"
+                      dataType="r8"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[bmi]"
+                      name="bmi" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[smoking_status]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[smoking_status]"
+                      name="smoking_status" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[stroke]"
+                      dataType="r8"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[stroke]"
+                      name="stroke" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import data to SQL Server.Paths[Excel Source Output]"
+              endId="Package\Import data to SQL Server\Conditional Split.Inputs[Conditional Split Input]"
+              name="Excel Source Output"
+              startId="Package\Import data to SQL Server\Original Data.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Import data to SQL Server.Paths[Not NA BMI]"
+              endId="Package\Import data to SQL Server\Destination table.Inputs[ADO NET Destination Input]"
+              name="Not NA BMI"
+              startId="Package\Import data to SQL Server\Conditional Split.Outputs[Not NA BMI]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="202.4,41.6"
+          Id="Package\Import data to SQL Server"
+          TopLeft="330.50000069184,241.794117439938" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import data to SQL Server">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Import data to SQL Server\Original Data"
+          TopLeft="484.999992772937,127.999998092651" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Import data to SQL Server\Conditional Split"
+          TopLeft="479.999992847443,259.166662804782" />
+        <NodeLayout
+          Size="157.6,41.6"
+          Id="Package\Import data to SQL Server\Destination table"
+          TopLeft="478.333326139384,409.93332652231" />
+        <EdgeLayout
+          Id="Package\Import data to SQL Server.Paths[Excel Source Output]"
+          TopLeft="556.09999281019,169.599998092651">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,89.566664712131"
+              Start="0,0"
+              End="0,82.066664712131">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,82.066664712131" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data to SQL Server.Paths[Not NA BMI]"
+          TopLeft="557.166659493413,300.766662804782">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,109.166663717528"
+              Start="0,0"
+              End="0,101.666663717528">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,101.666663717528" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-26.25453125,46.1223943587642,52.5090625,9.421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import data to SQL Server\Original Data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import data to SQL Server\Destination table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

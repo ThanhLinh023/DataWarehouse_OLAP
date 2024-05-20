@@ -1,13 +1,13 @@
 ﻿-- Câu 1: Top 5 đội tham gia nhiều trận đấu nhất
 SELECT [Measures].[Number of Games] ON COLUMNS,
-    HEAD( ORDER([Dim Team].[teamName].[teamName].MEMBERS,
+    HEAD( ORDER([Dim Team].[team Name].[team Name].MEMBERS,
             [Measures].[Number of Games],
             DESC), 5) ON ROWS
 FROM (
-    SELECT [Dim Team].[teamName].[teamName].MEMBERS ON COLUMNS,
+    SELECT [Dim Team].[team Name].[team Name].MEMBERS ON COLUMNS,
 			[Measures].[Number of Games] ON ROWS
     FROM (
-        SELECT [Dim Team].[teamKey].CHILDREN ON COLUMNS
+        SELECT [Dim Team].[team Key].CHILDREN ON COLUMNS
         FROM [NBAStatsDW])
 );
 -- Câu 2: Tổng số lần ghi điểm (FGM) của tất cả các trận đấu theo từng năm và từng tháng trong năm
@@ -23,7 +23,7 @@ FROM [NBAStatsDW];
 --  trong mùa giải 2015
 SELECT
     FILTER(
-        [Dim Team].[teamName].[teamName].MEMBERS,
+        [Dim Team].[team Name].[team Name].MEMBERS,
         ([Measures].[TOV] > 500 AND [Measures].[BLK] > 500)
     ) ON ROWS,
     {[Measures].[TOV], [Measures].[BLK]} ON COLUMNS
@@ -34,4 +34,4 @@ WHERE [Dim Game].[season].[season].&[2015];
 SELECT [Measures].[Total Points] on COLUMNS,
 		[Dim Game].[Season].[Season].MEMBERS on ROWS
 FROM [NBAStatsDW]
-WHERE ([Dim Game].[2ndTeam].[2ndTeam].&[GSW]);
+WHERE ([Dim Game].[2nd Team].[2nd Team].&[GSW]);

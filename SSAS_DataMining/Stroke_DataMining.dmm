@@ -1,0 +1,493 @@
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="4b86f1f2-37d1-493a-a5af-a590bfbcf4e3" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Stroke_DataMining</ID>
+  <Name>Stroke_DataMining</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CaseTableName</Name>
+      <Value>dbo_StrokeData</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-11378" scrolltop="-6242" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="26353" y="11367" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="StrokeData" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3556" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000e40d000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_StrokeData" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-11378</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-6242</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="983a3970-0a0c-4137-a27c-4b52712e560f">
+    <DataSourceViewID>StrokePrediction</DataSourceViewID>
+  </Source>
+  <Columns>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="5a665bbe-7e49-4049-a305-b73182c98f28">
+      <ID>Age</ID>
+      <Name>Age</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="39c71e29-61bf-4177-bdc1-e101598c3290">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e818f021-bfc5-41c1-9981-63ca0e3cf5ac">
+            <TableID>dbo_StrokeData</TableID>
+            <ColumnID>age</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="aa9e0bb3-8889-4036-8e0c-6ae1cccc9933">
+      <ID>Avg Glucose Level</ID>
+      <Name>Avg Glucose Level</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="04213262-ebe6-4db4-8774-43760f74b001">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="62bc04c7-4997-4dfd-9163-1272fd818e6b">
+            <TableID>dbo_StrokeData</TableID>
+            <ColumnID>avg_glucose_level</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="1f0ab1f4-7cab-4d77-b5d4-a0c5a82a36ae">
+      <ID>Bmi</ID>
+      <Name>Bmi</Name>
+      <Type>Double</Type>
+      <Content>Continuous</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f8a03a00-42d9-46af-a53e-2c79e0458e9d">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5b970f93-94aa-41ef-b28b-b5e79ef278c0">
+            <TableID>dbo_StrokeData</TableID>
+            <ColumnID>bmi</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="1b8286da-e107-458d-a4d0-07c53e56ca91">
+      <ID>Ever Married</ID>
+      <Name>Ever Married</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9c057d5a-8444-4c9e-aa9c-cff934940450">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bce1cc94-695d-4701-9a44-a60db66c57fe">
+            <TableID>dbo_StrokeData</TableID>
+            <ColumnID>ever_married</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="08f9c472-5203-4a80-9bab-0e0d528673cd">
+      <ID>Gender</ID>
+      <Name>Gender</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5d274dda-f700-4fc4-b43e-b0f0be15f444">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8b7c0971-5824-4f8b-9613-4ab7f3164e84">
+            <TableID>dbo_StrokeData</TableID>
+            <ColumnID>gender</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="55737277-5c0e-4aa7-828b-8db9a40f598d">
+      <ID>Heart Disease</ID>
+      <Name>Heart Disease</Name>
+      <Type>Double</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bab7f0f3-1aec-428d-a804-ec6d9818af3a">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2ae34152-62d3-4b4d-a578-069f0c5f5afa">
+            <TableID>dbo_StrokeData</TableID>
+            <ColumnID>heart_disease</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="bd9e9259-de41-4e2d-83ff-a37a8a2fe27a">
+      <ID>Hypertension</ID>
+      <Name>Hypertension</Name>
+      <Type>Double</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b0c47689-9b77-47a0-9834-0e6edb6ce4f5">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fec79ab0-af7f-409c-85da-cbf19bc31bce">
+            <TableID>dbo_StrokeData</TableID>
+            <ColumnID>hypertension</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="62af0685-2035-4e96-92f9-e1b924751526">
+      <ID>Id</ID>
+      <Name>Id</Name>
+      <IsKey>true</IsKey>
+      <Type>Double</Type>
+      <Content>Key</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d4b172cc-2039-4b5f-a99f-999fb3f6d10c">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8c9400fd-8bca-4cad-9179-750367738aae">
+            <TableID>dbo_StrokeData</TableID>
+            <ColumnID>id</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="b9f0b7f8-7460-4b88-838d-4d1bedda1ddc">
+      <ID>Residence Type</ID>
+      <Name>Residence Type</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="64286197-c18d-45ab-9d7b-669817fc863b">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bf3d2d2d-4074-4a78-a008-4c96a801e2aa">
+            <TableID>dbo_StrokeData</TableID>
+            <ColumnID>residence_type</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="d1dd40ba-bb29-48e4-9c33-b743f31f6dfd">
+      <ID>Smoking Status</ID>
+      <Name>Smoking Status</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f14b38e7-d01b-4874-849b-5621d94bb911">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="dc2966d9-27fd-42c6-b299-364900e434f2">
+            <TableID>dbo_StrokeData</TableID>
+            <ColumnID>smoking_status</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="fed8ac25-0cab-469f-be33-261f7706e406">
+      <ID>Stroke</ID>
+      <Name>Stroke</Name>
+      <Type>Double</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5b705ce4-f7f2-4bd1-b77a-8d2db4a7cdd7">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="87fbd01b-5ecb-45f2-a8de-9e77face5522">
+            <TableID>dbo_StrokeData</TableID>
+            <ColumnID>stroke</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="03875555-4edc-40f0-a120-61e89bf43ff9">
+      <ID>Work Type</ID>
+      <Name>Work Type</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5a2ce9f3-095a-4bc1-9649-1b83dcdf5e59">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8bef218f-9d67-49de-8833-96514a32538b">
+            <TableID>dbo_StrokeData</TableID>
+            <ColumnID>work_type</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+  </Columns>
+  <MiningModels>
+    <MiningModel dwd:design-time-name="4f0d6d96-2efa-4085-9dc9-2c96e5746cba">
+      <ID>Stroke_DecTree</ID>
+      <Name>Stroke_DecTree</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Decision_Trees</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="539fb848-0753-422c-8a3f-6d8d32d99b31">
+          <ID>Age</ID>
+          <Name>Age</Name>
+          <SourceColumnID>Age</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="e1116678-8b6e-4c2d-8368-6df9e015e3df">
+          <ID>Avg Glucose Level</ID>
+          <Name>Avg Glucose Level</Name>
+          <SourceColumnID>Avg Glucose Level</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="b965142e-e9a2-4539-9ca7-52a7ccba5cb6">
+          <ID>Bmi</ID>
+          <Name>Bmi</Name>
+          <SourceColumnID>Bmi</SourceColumnID>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="668f1b34-3ad1-4822-99ef-8df108a03a40">
+          <ID>Ever Married</ID>
+          <Name>Ever Married</Name>
+          <SourceColumnID>Ever Married</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="a4d6e98a-57c0-4bbe-8589-d236a4c5a080">
+          <ID>Gender</ID>
+          <Name>Gender</Name>
+          <SourceColumnID>Gender</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="9eb71f04-03e8-4cc0-a4be-22671e0b8aed">
+          <ID>Heart Disease</ID>
+          <Name>Heart Disease</Name>
+          <SourceColumnID>Heart Disease</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="14afb1bc-e38e-4240-ac91-5d1c1a10b922">
+          <ID>Hypertension</ID>
+          <Name>Hypertension</Name>
+          <SourceColumnID>Hypertension</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="ffd1e2c0-1d73-4c6a-b767-1275a58a96e5">
+          <ID>Id</ID>
+          <Name>Id</Name>
+          <SourceColumnID>Id</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="04e734f6-fbe0-46e1-8bf6-cdd71d7063a8">
+          <ID>Residence Type</ID>
+          <Name>Residence Type</Name>
+          <SourceColumnID>Residence Type</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="7c19fd31-d4bf-4590-acf3-f5350009e349">
+          <ID>Smoking Status</ID>
+          <Name>Smoking Status</Name>
+          <SourceColumnID>Smoking Status</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="3e119d1d-546e-4f5a-a92e-2a25c4f56da6">
+          <ID>Stroke</ID>
+          <Name>Stroke</Name>
+          <SourceColumnID>Stroke</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+        </Column>
+        <Column dwd:design-time-name="f51d219f-e850-4208-bf11-8f866472074d">
+          <ID>Work Type</ID>
+          <Name>Work Type</Name>
+          <SourceColumnID>Work Type</SourceColumnID>
+        </Column>
+      </Columns>
+      <AllowDrillThrough>true</AllowDrillThrough>
+    </MiningModel>
+    <MiningModel dwd:design-time-name="6422cbbc-b5fc-4620-8e4e-cad6912b6257">
+      <ID>Stroke_Cluster</ID>
+      <Name>Stroke_Cluster</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Clustering</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="11218432-263e-4413-9f5b-8e1342b48d92">
+          <ID>Age</ID>
+          <Name>Age</Name>
+          <SourceColumnID>Age</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="f7bb0893-9a46-4a7a-b1b5-abd556f62958">
+          <ID>Avg Glucose Level</ID>
+          <Name>Avg Glucose Level</Name>
+          <SourceColumnID>Avg Glucose Level</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="eb68c493-ab53-45a1-a023-c4112d9c6200">
+          <ID>Bmi</ID>
+          <Name>Bmi</Name>
+          <SourceColumnID>Bmi</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="da280ee9-49da-4aac-ad32-d1fd9ca80800">
+          <ID>Ever Married</ID>
+          <Name>Ever Married</Name>
+          <SourceColumnID>Ever Married</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="7b263542-8885-43e5-b8f2-06d20cb414e0">
+          <ID>Gender</ID>
+          <Name>Gender</Name>
+          <SourceColumnID>Gender</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="ea5346e0-d665-4e40-ada2-6e3f114df2d7">
+          <ID>Heart Disease</ID>
+          <Name>Heart Disease</Name>
+          <SourceColumnID>Heart Disease</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="140a977f-1f79-43f0-b66c-9f1ab250f841">
+          <ID>Hypertension</ID>
+          <Name>Hypertension</Name>
+          <SourceColumnID>Hypertension</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="f38be922-e8be-4d79-8dd3-7d2157d5ff16">
+          <ID>Id</ID>
+          <Name>Id</Name>
+          <SourceColumnID>Id</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="5c31ac67-1ad7-4614-927f-c629be3d0a13">
+          <ID>Residence Type</ID>
+          <Name>Residence Type</Name>
+          <SourceColumnID>Residence Type</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="84d33c38-4799-448f-b0d0-6034f5a3bb90">
+          <ID>Smoking Status</ID>
+          <Name>Smoking Status</Name>
+          <SourceColumnID>Smoking Status</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="41fde8c9-50a5-4963-b328-a5f87eb892b0">
+          <ID>Stroke</ID>
+          <Name>Stroke</Name>
+          <SourceColumnID>Stroke</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+        </Column>
+        <Column dwd:design-time-name="9da22555-655e-4e60-a034-4a9bc18dca69">
+          <ID>Work Type</ID>
+          <Name>Work Type</Name>
+          <SourceColumnID>Work Type</SourceColumnID>
+        </Column>
+      </Columns>
+      <AllowDrillThrough>true</AllowDrillThrough>
+    </MiningModel>
+    <MiningModel dwd:design-time-name="5c1b599e-d47d-45f3-923f-feca946728bf">
+      <ID>Stroke_Naive</ID>
+      <Name>Stroke_Naive</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Naive_Bayes</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="49f2cdd2-2e38-4bc2-9ba2-0525437e5e63">
+          <ID>Ever Married</ID>
+          <Name>Ever Married</Name>
+          <SourceColumnID>Ever Married</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="63201a42-fa93-4c38-b881-0f5e5d615192">
+          <ID>Gender</ID>
+          <Name>Gender</Name>
+          <SourceColumnID>Gender</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="6ed68349-ecc5-4857-a1b6-fe45f001a45c">
+          <ID>Heart Disease</ID>
+          <Name>Heart Disease</Name>
+          <SourceColumnID>Heart Disease</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="d96f8e9d-ad26-49d6-a20d-0954abead24b">
+          <ID>Hypertension</ID>
+          <Name>Hypertension</Name>
+          <SourceColumnID>Hypertension</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="b4dff3a7-d95f-4f4d-b98b-7b9ac00d6ef5">
+          <ID>Id</ID>
+          <Name>Id</Name>
+          <SourceColumnID>Id</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="15208967-3474-4034-b7c7-b0050b22d649">
+          <ID>Residence Type</ID>
+          <Name>Residence Type</Name>
+          <SourceColumnID>Residence Type</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="5e56e522-0774-4b53-bac1-0dcc55b263a7">
+          <ID>Smoking Status</ID>
+          <Name>Smoking Status</Name>
+          <SourceColumnID>Smoking Status</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="08b27f0b-b36c-41aa-b836-3f7a92bdebdf">
+          <ID>Stroke</ID>
+          <Name>Stroke</Name>
+          <SourceColumnID>Stroke</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+        </Column>
+        <Column dwd:design-time-name="0ff5b0ef-57fd-4272-9500-4a0a52073c3e">
+          <ID>Work Type</ID>
+          <Name>Work Type</Name>
+          <SourceColumnID>Work Type</SourceColumnID>
+        </Column>
+      </Columns>
+    </MiningModel>
+  </MiningModels>
+  <ddl100_100:HoldoutMaxPercent>30</ddl100_100:HoldoutMaxPercent>
+  <ddl100_100:HoldoutMaxCases>1000</ddl100_100:HoldoutMaxCases>
+  <ddl100_100:HoldoutSeed>12</ddl100_100:HoldoutSeed>
+</MiningStructure>

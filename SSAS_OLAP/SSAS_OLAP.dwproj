@@ -20,20 +20,20 @@
   </Cubes>
   <Dimensions>
     <ProjectItem>
-      <Name>DimGameType.dim</Name>
-      <FullPath>DimGameType.dim</FullPath>
+      <Name>Dim Game Type.dim</Name>
+      <FullPath>Dim Game Type.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>DimTime.dim</Name>
-      <FullPath>DimTime.dim</FullPath>
+      <Name>Dim Time.dim</Name>
+      <FullPath>Dim Time.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>DimTeam.dim</Name>
-      <FullPath>DimTeam.dim</FullPath>
+      <Name>Dim Team.dim</Name>
+      <FullPath>Dim Team.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>DimGame.dim</Name>
-      <FullPath>DimGame.dim</FullPath>
+      <Name>Dim Game.dim</Name>
+      <FullPath>Dim Game.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
